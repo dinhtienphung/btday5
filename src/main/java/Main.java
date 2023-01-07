@@ -23,6 +23,7 @@ public class Main {
 
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         int n;
         boolean check = false;
         do {
@@ -68,11 +69,11 @@ public class Main {
     public static void  ListOderAndDetails() {
         List<OrdersEntity> or1 = (List<OrdersEntity>) ordersRepo.findAll();
         for (OrdersEntity ordersEntity : or1) {
-            List<OrderDetailsEntity> od1 = (List<OrderDetailsEntity>) orderDetailRepo.findAll();
+            System.out.println("tim all orderDetails" + ordersEntity.toString());
+            List<OrderDetailsEntity> od1 = (List<OrderDetailsEntity>) orderDetailRepo.getOrderDetailByOrderId(ordersEntity.getId());
             for (OrderDetailsEntity orderDetailsEntity : od1) {
-                System.out.println("tim all order" + od1.toString());
+                System.out.println("tim all order" + orderDetailsEntity.toString());
             }
-            System.out.println("tim all orderDetails" + or1.toString());
         }
     }
 
