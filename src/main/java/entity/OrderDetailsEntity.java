@@ -73,7 +73,6 @@ public class OrderDetailsEntity {
                 ", productName='" + productName + '\'' +
                 ", quantity=" + quantity +
                 ", unitPrice=" + unitPrice +
-                ", orders=" + orders +
                 '}';
     }
 }
